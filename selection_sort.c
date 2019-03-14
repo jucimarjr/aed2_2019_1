@@ -27,8 +27,9 @@ int selection_sort(int *vector, int size){
 int main()
 {
 	int vector[TAM];
+	int result[TAM];
 	create_vector(vector, TAM);
-	selection_sort(vector, TAM);
-	print_vector(vector, TAM);
+	result = selection_sort(vector, TAM);
+	print_vector(result, TAM);
 	return 0;
 }
