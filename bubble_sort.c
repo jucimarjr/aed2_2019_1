@@ -1,4 +1,4 @@
-#inlude io.h
+#include "io.h"
 
 void bubble_sort(int numbers[], int size)
 {
@@ -16,7 +16,7 @@ void bubble_sort(int numbers[], int size)
 		}
 	}
 }
-
+/*
 int main()
 {
 	int vector[TAM];
@@ -25,3 +25,4 @@ int main()
 	print_vector(vector, TAM);
 	return 0;
 }
+*/
