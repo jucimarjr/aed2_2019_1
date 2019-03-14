@@ -1,3 +1,5 @@
+#inlude io.h
+
 void bubble_sort(int numbers[], int size)
 {
 	int aux;
@@ -13,4 +15,13 @@ void bubble_sort(int numbers[], int size)
 			}
 		}
 	}
+}
+
+int main()
+{
+	int vector[TAM];
+	create_vector(vector, TAM);
+	bubble_sort(vector, TAM);
+	print_vector(vector, TAM);
+	return 0;
 }
