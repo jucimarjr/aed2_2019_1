@@ -1,3 +1,5 @@
+#include io.h
+
 int selection_sort(int *vector, int size){
     int smallest;
     int aux;
@@ -20,4 +22,13 @@ int selection_sort(int *vector, int size){
 
     }
     return aux_vect;
+}
+
+int main()
+{
+	int vector[TAM];
+	create_vector(vector, TAM);
+	selection_sort(vector, TAM);
+	print_vector(vector, TAM);
+	return 0;
 }
