@@ -1,6 +1,5 @@
 #include "io.h"
 
-
 void insertion_sort(int vector[])
 {
 	int i, key, j;
