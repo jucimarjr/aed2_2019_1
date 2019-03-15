@@ -20,7 +20,7 @@ void bubble_sort(int vector[])
 int main()
 {
 	int vector[TAM];
-  read(vector);
+  	read(vector);
 	bubble_sort(vector);
 	print(vector);
 
