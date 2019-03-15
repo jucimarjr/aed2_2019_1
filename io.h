@@ -1,20 +1,5 @@
-#include <stdio.h>
-#define TAM 1000
+#include "io.c"
 
-void create_vector(int * vector, int size)
-{
-      for (int i = 0; i < size; i++)
-      {
-        scanf("%i", (vector + i));
-      }
-}
+int * create_vector(int vector[]);
 
-void print_vector(int vector[], int size)
-{
-  for (int i = 0; i < size; i++)
-  {
-    printf("%i ", *(vector + i) );
-  }
-
-  printf("\n");
-}
+void print_vector(int vector[]);
