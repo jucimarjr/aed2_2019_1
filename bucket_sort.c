@@ -65,9 +65,9 @@ void bucket_sort(int array[],int n)
 int main()
 {
   int vector[1000];
-  create_vector(vector, 1000);
+  read(vector, 1000);
   bucket_sort(vector, 1000);
-  print_vector(vector, 1000);
+  print(vector, 1000);
     return 0;
 }
 

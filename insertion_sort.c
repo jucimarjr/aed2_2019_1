@@ -24,9 +24,9 @@ void insertion_sort(int arr[], int size)
 int main()
 {
 	int vector[TAM];
-	create_vector(vector, TAM);
+	read(vector, TAM);
 	insertion_sort(vector, TAM);
-	print_vector(vector, TAM);
+	print(vector, TAM);
 
 
 	return 0;

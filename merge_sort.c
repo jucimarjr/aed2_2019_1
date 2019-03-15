@@ -60,8 +60,8 @@ void merge_sort(int vector[], int beginning, int end)
 {
     int vector[1000];
 
-    create_vector(vector, 1000);
+    read(vector, 1000);
     merge_sort(vector, 0, 1000);
-    print_vector(vector, 1000);
+    print(vector, 1000);
     return 0;
 } */

@@ -34,9 +34,9 @@ void shell_sort(int *vector, int size)
 int main()
 {
   int vector[TAM];
-  create_vector(vector, TAM);
+  read(vector, TAM);
   shell_sort(vector, TAM);
-  print_vector(vector,TAM);
+  print(vector,TAM);
 
   return 0;
 }

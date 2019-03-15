@@ -28,9 +28,9 @@ int main()
 {
 	int vector[TAM];
 	int result[TAM];
-	create_vector(vector, TAM);
+	read(vector, TAM);
 	result = selection_sort(vector, TAM);
-	print_vector(result, TAM);
+	print(result, TAM);
 	return 0;
 }
 */

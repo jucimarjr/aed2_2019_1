@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define TAM 1000
 
-void create_vector(int * vector)
+void read(int * vector)
 {
       for (int i = 0; i < TAM; i++)
       {
@@ -9,7 +9,7 @@ void create_vector(int * vector)
       }
 }
 
-void print_vector(int vector[])
+void print(int vector[])
 {
   for (int i = 0; i < TAM; i++)
   {
