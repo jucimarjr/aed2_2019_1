@@ -1,6 +1,7 @@
 #include "io.h"
 
-int selection_sort(int vector[]){
+int selection_sort(int vector[])
+{
     int smallest;
     int aux;
     
