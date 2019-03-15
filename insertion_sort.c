@@ -1,26 +1,23 @@
 #include "io.h"
 
 
-void insertion_sort(int arr[], int size)
+void insertion_sort(int vector[])
 {
 	int i, key, j;
-	int * vet_aux = arr;
-	for (i = 1; i < size; i++)
+	for (i = 1; i < TAM; i++)
   {
-		key = vet_aux[i];
+		key = vector[i];
 		j = i - 1;
 
-		while (j >= 0 && vet_aux[j] > key)
+		while (j >= 0 && vector[j] > key)
 		{
-			vet_aux[j + 1] = vet_aux[j];
+			vector[j + 1] = vector[j];
 			j = j - 1;
 		}
-		vet_aux[j + 1] = key;
+		vector[j + 1] = key;
 	}
-	arr = vet_aux;
 }
 
-/*
 int main()
 {
 	int vector[TAM];
@@ -28,8 +25,5 @@ int main()
 	insertion_sort(vector, TAM);
 	print(vector, TAM);
 
-
 	return 0;
-
 }
- */ 
