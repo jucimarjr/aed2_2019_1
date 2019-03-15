@@ -1,64 +1,61 @@
 #include "io.h"
-// #include <stdlib.h>
 
-void heapfy(int vect[], int size, int i)
+void heapfy(int vector[], int size, int i)
 {
     int exchange;
     int biggest = i;
     int left = i*2 + 1;
     int right = i*2 + 2;
 
-    if(left < size && vect[left] > vect[biggest])
+    if(left < size && vector[left] > vector[biggest])
 	{
         biggest = left;
     }
 
-    if(right < size && vect[right] > vect[biggest])
+    if(right < size && vector[right] > vector[biggest])
 	{
         biggest = right;
     }
 
     if(biggest != i)
 	{
-        exchange = vect[i];
-        vect[i] = vect[biggest];
-        vect[biggest] = exchange;
+        exchange = vector[i];
+        vector[i] = vector[biggest];
+        vector[biggest] = exchange;
 
-        heapfy(vect, size, biggest);
+        heapfy(vector, size, biggest);
     }
 }
 
-void heap_sort(int vect[],int size)
+void heap_sort(int vector[])
 {
 
     int temp;
 
-    for(int i = (size/2) - 1 ; i >= 0 ; i-- )
+    for(int i = (TAM/2) - 1 ; i >= 0 ; i-- )
 	{
-        heapfy(vect, size, i);
+        heapfy(vector, TAM, i);
 
     }
 
 
-    for(int i = size - 1 ; i >= 0 ; i--)
+    for(int i = TAM - 1 ; i >= 0 ; i--)
 	{
-        temp = vect[0];
-        vect[0] = vect[i];
-        vect[i] = temp;
+        temp = vector[0];
+        vector[0] = vector[i];
+        vector[i] = temp;
 
-        heapfy(vect, i, 0);
+        heapfy(vector, i, 0);
     }
 
 }
-/*
+
 int main()
-{    
-  int vector[1000];
+{
+  int vector[TAM];
+  read(vector);
+  heap_sort(vector);
+  print(vector);
 
-  read(vector, 1000);
-  heap_sort(vector, 1000);
-  print(vector, 1000);
-
-    return 0;
+  return 0;
 }
-*/
