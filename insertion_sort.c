@@ -21,9 +21,9 @@ void insertion_sort(int vector[])
 int main()
 {
 	int vector[TAM];
-	read(vector, TAM);
-	insertion_sort(vector, TAM);
-	print(vector, TAM);
+	read(vector);
+	insertion_sort(vector);
+	print(vector);
 
 	return 0;
 }
