@@ -1,5 +1,5 @@
 #include "io.h"
-#include  <stdio.h>  
+#include <stdlib.h> 
   
 /*  Counting sort function  */
 
@@ -30,8 +30,9 @@ int  counting_sort(int vector[])
         b[c[vector[j]]] = vector[j];
         c[vector[j]] = c[vector[j]] - 1;
     }
-    for (i = 1; i <= TAM; i++)
-        printf("%d", b[i]);
+    for (i = 1; i <= TAM; i++){
+        vector[i] = b[i];
+    }
 }
 
 int  main()
