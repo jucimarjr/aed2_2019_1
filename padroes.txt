@@ -1,36 +1,32 @@
-TODAS as funçoes de entrada, saida e "sorts" :
-- RRECEBE de parâmetro UM (1) vetor de entrada (desordenado)
-- RETORNA UM (1) vetor (ordenado)
--------------------------------------------------------------------------
-TAMANHO padrão para todos é 1000 
-#define TAM 1000
--------------------------------------------------------------------------
-ENTRADA e SAIDA em um só arquivo chamado I/O.c
--------------------------------------------------------------------------
-TODAS as funçoes e VARIAVEIS em INGLES, nome do VETOR DE ENTRADA será **VECTOR**, logo
-TODAS as funções precisarão de uma variável para armazenar o vetor ordenado, que será chamado de **VECTOR_AUX**
+UPDATE (Mudança de padrão) - Não é aconselhável retornar um vetor dentro de uma função, então para evitar isso em toda MAIN 
+de todos os códigos deverá ser criado vetor com tamanho máximo TAM (1000, definido por #define TAM 1000)
+e utilizado sempre ele para ser parâmetro das funções, assim mudando uma apenas a "cópia" do original.
 
-Ex:
-int xxxxx_sort(int vector)
+-------------------------------------------------------------------
+EM TODAS as funções deverá receber como parâmetro apenas UM vetor e retornar VOID.
+Ex: 
+void xxx_sort(int vector[])
 {
-  int vector_aux[TAM];
-  //code
-  return vector_aux;
+	//code
 }
--------------------------------------------------------------------------
-TODOS os arquivos deverão importar o **io.h**, e não o **io.c**
-TODOS os arquivos deverão ter no cabeçalho #define TAM 1000
--------------------------------------------------------------------------
-Na MAIN, deverá ser criada uma variavel com nome RESULT para armazenar a saída do sort e uma variável com nome VECTOR para armazenar o vetor inicial.
+---------------------------------------------------------------------
+EM TODA FUNÇÃO O NOME PADRÃO DO VETOR SERÁ **vector**, exatamente como segue no exemplo.
+
 Ex:
 int main()
 {
-  int vector[TAM];
-	int result[TAM];
-  
-  read(vector);
-	result = xxx_sort(vector);
-	print(result);
-  
-  return 0;
+   	int vector[TAM];
+   	
+   	read(vector);
+	xxx_sort(vector);
+	print(vector);
+
+	return 0;
 }
+
+-------------------------------------------------------------------
+Para a COMPILAÇÃO, deverá ser feito dessa forma:
+gcc xxx_sort.c -o xxx_sort
+./xxx_sort < 1000.txt > saida.txt
+--------------------------------------------------------------------
+
