@@ -1,67 +1,78 @@
 #include "io.h"
 #include <stdlib.h>
 
-void merge(int vector[], int beginning, int middle, int end)
-{
-    int com1 = beginning, com2 = middle+1, com_aux = 0, size = end-beginning+1;
-    int *vect_aux;
-    vect_aux = (int*)malloc(size * sizeof(int));
+void merge(int vector[], int beginning, int middle, int end) {
 
-    while(com1 <= middle && com2 <= end-1)
-	{
-        if(vector[com1] < vector[com2])
-		{
-            vect_aux[com_aux] = vector[com1];
-            com1++;
+    int beginning1 = beginning;
+    int beginning2 = middle + 1;
+    int beginningAux = 0;
+    int tam = end - beginning + 1;
+    int *vetAux;
+
+    vetAux = (int*)malloc(tam * sizeof(int));
+
+    while(beginning1 <= middle && beginning2 <= end)
+    {
+        if(vector[beginning1] < vector[beginning2])
+        {
+            vetAux[beginningAux] = vector[beginning1];
+            beginning1++;
+
         }
-		else
-		{
-            vect_aux[com_aux] = vector[com2];
-            com2++;
+        else
+        {
+            vetAux[beginningAux] = vector[beginning2];
+            beginning2++;
+
         }
-        com_aux++;
+        beginningAux++;
     }
 
-    while(com1 <= middle)
-	{
-        vect_aux[com_aux] = vector[com1];
-        com_aux++;
-        com1++;
+    while(beginning1 <= middle)
+    {
+        vetAux[beginningAux] = vector[beginning1];
+        beginningAux++;
+        beginning1++;
+
     }
 
-    while(com2 <= end)
-	{
-        vect_aux[com_aux] = vector[com2];
-        com_aux++;
-        com2++;
+
+    while(beginning2 <= end)
+    {
+        vetAux[beginningAux] = vector[beginning2];
+        beginningAux++;
+        beginning2++;
+
     }
 
-    for(com_aux = beginning; com_aux <= end; com_aux++)
-	{
-        vector[com_aux] = vect_aux[com_aux-beginning];
+
+    for(beginningAux = beginning; beginningAux <= end; beginningAux++)
+    {
+        vector[beginningAux] = vetAux[beginningAux-beginning];
     }
 
-    free(vect_aux);
+    free(vetAux);
+
 }
 
 void merge_sort(int vector[], int beginning, int end)
 {
-    if (beginning < end)
-	{
+    if (beginning < end) {
         int middle = (end+beginning)/2;
-
         merge_sort(vector, beginning, middle);
-        merge_sort(vector, middle + 1, end);
+        merge_sort(vector, middle+1, end);
         merge(vector, beginning, middle, end);
+
     }
+
 }
 
-/* int main()
+int main()
 {
     int vector[1000];
+    read(vector);
+    merge_sort(vector, 0, TAM);
+    print(vector);
 
-    read(vector, 1000);
-    merge_sort(vector, 0, 1000);
-    print(vector, 1000);
     return 0;
-} */
+}
