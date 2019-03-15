@@ -1,5 +1,4 @@
 #include "io.h"
-#define TAM 1000
 
 void bubble_sort(int vector[])
 {
@@ -20,9 +19,8 @@ void bubble_sort(int vector[])
 
 int main()
 {
-   	int vector[TAM];
-   	
-   	read(vector);
+	int vector[TAM];
+  read(vector);
 	bubble_sort(vector);
 	print(vector);
 

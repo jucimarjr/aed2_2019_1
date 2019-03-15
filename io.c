@@ -1,14 +1,12 @@
 #include <stdio.h>
 #define TAM 1000
 
-int read()
-{     
-      int vector_aux[TAM];
+void read(int vector[])
+{
       for (int i = 0; i < TAM; i++)
       {
-        scanf("%i", (vector_aux + i));
+        scanf("%i", (vector + i));
       }
-      return vector_aux; 
 }
 
 void print(int vector[])
