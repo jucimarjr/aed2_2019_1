@@ -1,5 +1,6 @@
 #include "io.c"
+#define TAM 1000
 
-int * create_vector(int vector[]);
+void create_vector(int vector[]);
 
 void print_vector(int vector[]);

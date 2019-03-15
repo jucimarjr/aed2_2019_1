@@ -1,11 +1,11 @@
 #include "io.h"
 
-void bubble_sort(int numbers[], int size)
+void bubble_sort(int numbers[])
 {
 	int aux;
-	for(int counter = 1 ; counter < size ; counter++)
+	for(int counter = 1 ; counter < TAM ; counter++)
 	{
-		for(int i = 0 ; i < size -1 ; i++)
+		for(int i = 0 ; i < TAM -1 ; i++)
 		{
 			if(numbers[i] > numbers[i+1])
 			{
@@ -16,13 +16,12 @@ void bubble_sort(int numbers[], int size)
 		}
 	}
 }
-/*
+
 int main()
 {
 	int vector[TAM];
-	create_vector(vector, TAM);
-	bubble_sort(vector, TAM);
-	print_vector(vector, TAM);
+	create_vector(vector);
+	bubble_sort(vector);
+	print_vector(vector);
 	return 0;
 }
-*/
