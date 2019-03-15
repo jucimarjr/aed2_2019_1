@@ -1,48 +1,49 @@
 #include "io.h"
-void quick_sort(int vect[], int beginning, int end)
+// a função não segue fielmente o padrão para manter
+// propriedade recursiva
+void quick_sort(int vector[], int beginning, int end)
 {
 	int i, j, pivot, aux;
 	i = beginning;
-	j = end-1;
-	pivot = vect[(beginning + end) / 2];
+	j = end - 1;
+	pivot = vector[(beginning + end) / 2];
+
 	while(i <= j)
 	{
-		while(vect[i] < pivot && i < end)
+		while(vector[i] < pivot && i < end)
 		{
 			i++;
 		}
-		while(vect[j] > pivot && j > beginning)
+
+		while(vector[j] > pivot && j > beginning)
 		{
 			j--;
 		}
+
 		if(i <= j)
 		{
-			aux = vect[i];
-			vect[i] = vect[j];
-			vect[j] = aux;
+			aux = vector[i];
+			vector[i] = vector[j];
+			vector[j] = aux;
 			i++;
 			j--;
+
 		}
+
 	}
+
 	if(j > beginning)
-		quick_sort(vect, beginning, j+1);
+		quick_sort(vector, beginning, j+1);
 	if(i < end)
-		quick_sort(vect, i, end);
+		quick_sort(vector, i, end);
 }
 
-/*
 int main()
 {
-
     int vector[1000];
-
-		read(vector, 1000);
-
+		read(vector);
 		quick_sort(vector, 0, 1000);
-
-		print(vector, 1000);
-
+		print(vector);
 
     return 0;
 }
-*/
