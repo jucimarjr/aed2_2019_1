@@ -1,11 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "io.h"
 
-void swap(int vetor[],int x, int y)
+#define TAM 1000
+
+void swap(int vector[],int x, int y)
 { 
-    int aux = vetor[x]; 
-    vetor[x] = vetor[y]; 
-    vetor[y] = aux; 
+    int aux = vector[x]; 
+    vector[x] = vector[y]; 
+    vector[y] = aux; 
 } 
 
 int heapfy(int vector[], int size, int i)
@@ -35,35 +38,35 @@ int heapfy(int vector[], int size, int i)
     }
 }
 
-void create_max_heap(int* heap_size, int vetor[])
+void create_max_heap(int* heap_size, int vector[])
 {
 
     for(int i = (*heap_size/2) ; i >= 1 ;i-- )
 	{
-        heapfy(vetor, *heap_size, i);
+        heapfy(vector, *heap_size, i);
     }
 
 }
 
-int insert(int* heap_size, int vetor[], int insercao)
+int insert(int* heap_size, int vector[], int insercao)
 {
-    vetor[*heap_size] = insercao;
+    vector[*heap_size] = insercao;
 
     (*heap_size)++;
     
     for(int i = (*heap_size/2) ; i >= 1 ;i-- )
 	{
-        heapfy(vetor, *heap_size, i);
+        heapfy(vector, *heap_size, i);
     }
 
 }
 
-void extract_max(int vetor[], int* heap_size)
+void extract_max(int vector[], int* heap_size)
 {
 
-    swap(vetor, 1, *heap_size-1);
+    swap(vector, 1, *heap_size-1);
 
-    heapfy(vetor, *heap_size-1, 1);
+    heapfy(vector, *heap_size-1, 1);
 
     (*heap_size)--;
 
@@ -95,18 +98,18 @@ void heap_sort(int vector[], int* heap_size)
 int main()
 {
 
-    int vetor[] = {0, 1, 5, 3, 3, 2, 10};
-    int heap_size = (sizeof(vetor)/sizeof(int));
+    int vector[TAM];
+    int heap_size = (sizeof(vector)/sizeof(int));
+    read(vector);
+    create_max_heap(&heap_size, vector);
 
-    create_max_heap(&heap_size, vetor);
+    extract_max(vector, &heap_size);
 
-    extract_max(vetor, &heap_size);
+    insert(&heap_size, vector, 10);
 
-    insert(&heap_size, vetor, 10);
+    heap_sort(vector, &heap_size);
 
-    heap_sort(vetor, &heap_size);
-
-    for(int i=1; i< heap_size; i++) printf("%d ", vetor[i]);
+    print(vector);
 
 
     return 0;

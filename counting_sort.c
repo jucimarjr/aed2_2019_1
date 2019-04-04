@@ -1,7 +1,5 @@
 #include "io.h"
-#include <stdlib.h> 
-  
-/*  Counting sort function  */
+#include  <stdio.h>
 
 int max_element(int vector[])
 {
@@ -30,9 +28,8 @@ int  counting_sort(int vector[])
         b[c[vector[j]]] = vector[j];
         c[vector[j]] = c[vector[j]] - 1;
     }
-    for (i = 1; i <= TAM; i++){
-        vector[i] = b[i];
-    }
+    for (i = 1; i <= TAM; i++)
+        printf("%d", b[i]);
 }
 
 int  main()
