@@ -7,20 +7,7 @@ void swap(int vetor[],int x, int y)
     vetor[x] = vetor[y]; 
     vetor[y] = aux; 
 } 
-/*
-int parent(int vetor[], int pos)
-{
-    return vetor[pos/2];
-}
-int left(int vetor[], int pos)
-{
-    return vetor[2*pos];
-}
-int right(int vetor[], int pos)
-{
-    return vetor[2*pos + 1];
-}
-*/
+
 int heapfy(int vector[], int size, int i)
 {
     int exchange;
@@ -47,6 +34,7 @@ int heapfy(int vector[], int size, int i)
         heapfy(vector, size, biggest);
     }
 }
+
 void create_max_heap(int* heap_size, int vetor[])
 {
 
@@ -56,7 +44,6 @@ void create_max_heap(int* heap_size, int vetor[])
     }
 
 }
-
 
 int insert(int* heap_size, int vetor[], int insercao)
 {
@@ -104,7 +91,6 @@ void heap_sort(int vector[], int* heap_size)
     }
 
 }
-
 
 int main()
 {
