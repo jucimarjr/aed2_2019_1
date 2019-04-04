@@ -1,17 +1,14 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "io.h"
 
-#define TAM 1000
-
-void swap(int vector[],int x, int y)
+void swap(int vector[],int x, int y) // change values between two given positions in the vector
 { 
     int aux = vector[x]; 
     vector[x] = vector[y]; 
     vector[y] = aux; 
 } 
 
-int heapfy(int vector[], int size, int i)
+int heapfy(int vector[], int size, int i ) // compares the values in a sub-tree (a parent and its two children) and applies the heap property
 {
     int exchange;
     int biggest = i;
@@ -38,7 +35,7 @@ int heapfy(int vector[], int size, int i)
     }
 }
 
-void create_max_heap(int* heap_size, int vector[])
+void create_max_heap(int* heap_size, int vector[]) // apply the maximum heap property that says that the parent should be bigger than its children
 {
 
     for(int i = (*heap_size/2) ; i >= 1 ;i-- )
@@ -48,7 +45,7 @@ void create_max_heap(int* heap_size, int vector[])
 
 }
 
-int insert(int* heap_size, int vector[], int insercao)
+int insert(int* heap_size, int vector[], int insercao) // insert an element on the vector
 {
     vector[*heap_size] = insercao;
 
@@ -61,7 +58,7 @@ int insert(int* heap_size, int vector[], int insercao)
 
 }
 
-void extract_max(int vector[], int* heap_size)
+void extract_max(int vector[], int* heap_size) // it extracts the element that is stored in the root of the binary heap tree
 {
 
     swap(vector, 1, *heap_size-1);
@@ -72,7 +69,7 @@ void extract_max(int vector[], int* heap_size)
 
 }
 
-void heap_sort(int vector[], int* heap_size)
+void heap_sort(int vector[], int* heap_size) // a sorting algorithm based on heap properties
 {
 
     int temp;
@@ -101,6 +98,7 @@ int main()
     int vector[TAM];
     int heap_size = (sizeof(vector)/sizeof(int));
     read(vector);
+
     create_max_heap(&heap_size, vector);
 
     extract_max(vector, &heap_size);
