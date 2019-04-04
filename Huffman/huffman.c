@@ -32,14 +32,14 @@ static heap_t *_heap_create(int s, long *f)
 	return h;
 }
  
-static void _heap_destroy(heap_t *heap)
+static void _heap_destroy(heap_t *heap)		/*free up memory space*/
 {
 	free(heap->h);
 	free(heap);
 }
  
 #define swap_(I,J) do { int t_; t_ = a[(I)];	\
-		a[(I)] = a[(J)]; a[(J)] = t_; } while(0)
+		a[(I)] = a[(J)]; a[(J)] = t_; } while(0)	/*funtion to swip values I and J*/
 
 static void _heap_sort(heap_t *heap)
 {
@@ -62,7 +62,7 @@ static void _heap_sort(heap_t *heap)
 
 #undef swap_
  
-static void _heap_add(heap_t *heap, int c)
+static void _heap_add(heap_t *heap, int c)		
 {
 	if ( (heap->n + 1) > heap->s ) 
 	{
@@ -150,13 +150,27 @@ void free_huffman_codes(huffman_code_t **c)
  
 #define MAXBITSPERCODE 100
  
-void inttobits(int c, int n, char *s)
+void inttobits(int c, int n, char *s) /*generates each value, it's respective binary number*/
 {
 	s[n] = 0;
 	while(n > 0) 
 	{
 		s[n-1] = (c%2) + '0';
 		c >>= 1; n--;
+	}
+}
+
+void print(huffman_code_t **r)
+{
+	int i;
+	char strbit[MAXBITSPERCODE];
+	for(i=0; i < BYTES; i++)		/*print results*/
+	{
+		if ( r[i] != NULL ) 
+		{
+			inttobits(r[i]->code, r[i]->nbits, strbit);
+			printf("%c %s\n", i, strbit);
+		}
 	}
 }
  
@@ -166,23 +180,17 @@ int main()
 {
 	huffman_code_t **r;
 	int i;
-	char strbit[MAXBITSPERCODE];
 	const char *p;
 	long freqs[BYTES];
 
-	memset(freqs, 0, sizeof freqs);
+	memset(freqs, 0, sizeof freqs);		/*used to fill a block of memory with the 0 value*/
 
 	p = test;
-	while(*p != '\0') freqs[*p++]++;
+	while(*p != '\0') freqs[*p++]++;		/*counting the frequecy witch is visited*/
 
 	r = create_huffman_codes(freqs);
 
-	for(i=0; i < BYTES; i++) {
-		if ( r[i] != NULL ) {
-			inttobits(r[i]->code, r[i]->nbits, strbit);
-			printf("%c (%d) %s\n", i, r[i]->code, strbit);
-		}
-	}
+	print(r);
 
 	free_huffman_codes(r);
 
