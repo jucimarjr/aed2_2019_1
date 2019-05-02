@@ -1,5 +1,3 @@
-
-
 def Fatorial(num):
     fat = 1
     if num == 0:
@@ -15,7 +13,7 @@ def Permutacao(lista):
     topper = 0
     i = 0
     swapi = 0
-    while (i <= (Fatorial(len(lista)))):
+    while (i < (Fatorial(len(lista)))):
         if (swapi == len(lista) - 1):
             swapi = 0
         aux = combinacao[swapi]
@@ -27,4 +25,4 @@ def Permutacao(lista):
         i+=1
     return sorted(combinacoes)
 
-Permutacao([1,2,3,4])
+Permutacao([1,2,3,4]),
