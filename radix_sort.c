@@ -1,34 +1,28 @@
-#include <stdio.h>
-#include "io.h"
+int i;
+int *b;
+int max = numbers[0];
+int exp = 1;
 
-void radix_sort(int vector[]) {
-    int i, b[TAM], m = 0,  exp = 1;
-    for (i = 0; i < TAM;  i++) 
-    {
-        if (vector[i] > m)
-        m = vector[i];
-    }
+b = (int*)calloc(size, sizeof(int));
 
-    while (m / exp >  0) {
-    int box[TAM] = { 0 };
-    for (i = 0; i <  TAM; i++)
-        box[vector[i] / exp %  TAM]++;
-    for (i = 1; i <  TAM; i++)
-        box[i] += box[i -  1];
-    for (i = TAM - 1; i  >= 0; i--)
-        b[--box[vector[i] / exp  % TAM]] = vector[i];
-    for (i = 0; i <  TAM; i++)
-        vector[i] = b[i];
-    exp *= TAM;
-    }
+for (i = 0; i < size; i++)
+{
+	if(numbers[i] > max)
+		max = numbers[i];	
 }
 
-int main()
+while(max/exp > 0)
 {
-    int vector[TAM];
-    read(vector);
-    radix_sort(vector);
-    print(vector);
-
-    return 0;
+	int bucket[10] = {0};
+	for(i = 0; i < size; i++)
+		bucket[(numbers[i] / exp) % 10]++;
+	for(i = 1; i < 10; i++)
+		bucket[i] += bucket[i - 1];
+	for (i = size - 1; i >= 0; i--)
+		b[--bucket[(numbers[i] / exp) % 10]] = numbers[i];
+	for (i = 0; i < size; i++)
+		numbers[i] = b[i];
+	exp *= 10;
+}
+free(b);
 }
