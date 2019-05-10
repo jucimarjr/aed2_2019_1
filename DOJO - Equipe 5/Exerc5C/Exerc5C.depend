@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1556749626 source:g:\pendrive\faculdade\5º período\aed2\exerc5c\main.c
+	<stdio.h>
+	<stdbool.h>
+
+1557474714 source:g:\pendrive\faculdade\5º período\aedii\equipe 5 combinações\exerc5c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+
