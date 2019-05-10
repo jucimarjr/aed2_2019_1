@@ -27,4 +27,5 @@ def Combinacao(lista, numero):
     #retorna o vetor com todas as combinações
     return result
 
-print(Combinacao([1,2,3], 2))
+entrada = input()
+print(Combinacao(entrada)

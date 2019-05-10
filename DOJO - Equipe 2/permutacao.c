@@ -36,15 +36,12 @@ void listar_permutacao(int vetor[], int n){
 }
 
 int main() {
-	int *vetor, n;
-	printf("Digite o tamanho do vetor: ");
-	scanf("%d", &n);
+	int *vetor, n = 10;
 	vetor = (int *)malloc(n * sizeof(int));
 	for(int i = 0; i < n; i++){
-		printf("Posicao %d: ", i+1);
 		scanf("%d", &vetor[i]);
 	}
-	listar_permutacao(vetor, n);
+	listar_permutacao(vetor, 4);
 	free(vetor);
 	return 0;
 }
