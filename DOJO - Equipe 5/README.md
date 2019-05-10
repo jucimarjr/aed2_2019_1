@@ -1,0 +1,9 @@
+EQUIPE 3
+
+Composta por:
+
+-DANIEL AKIO CHEN
+
+-CAIO OLIVEIRA
+
+-ANA JESSYE
