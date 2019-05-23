@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+         <div class="alert alert-warning">
+           <ul class=flashes>
+             {% for message in messages %}
+             <li>{{ message }}</li>
+             {% endfor %}
+           </ul>
+         </div>
+         {% endif %}
+         {% endwith %}
+         {{form.csrf_token}}
+         <form method="POST" enctype="multipart/form-data">
+          <div class="" >
+                 <label>Entrada:</label>
+                <p></p>
+                 {{ form.target(placeholder="Digite a frase a ser alcançada", style="border-radius: 3px; width:10px; margin: 10px;padding: 5px;background-color: #f2f5f7;align-content: absolute;
+      width: 300px;
+      height: 30px;
+      padding-left: 5px;
+      font: bold 13px sans-serif;
+      color: #191970;
+      border-radius: 3px;
+      border: 1px solid #bfc4c6;
+      outline: none;  ")}}
+                 <p></p>
+                 <label>Taxa de mutação:</label>
+                 <p></p>
+                 {{ form.mutation(placeholder="Digite a taxa de mutação em decimal. Ex: 8% = 0.08", style="border-radius: 3px; width:10px; margin: 10px;padding: 5px;background-color: #f2f5f7;align-content: absolute;
+      width: 300px;
+      height: 30px;
+      padding-left: 5px;
+      font: bold 13px sans-serif;
+      color: #191970;
+      border-radius: 3px;
+      border: 1px solid #bfc4c6;
+      outline: none;  ") }}
+                <p></p>
+                <label>Tamanho das gerações:</label>
+                <p></p>
+                {{ form.gen_size(placeholder="Digite o tamanho das gerações", style="border-radius: 3px; width:10px; margin: 10px;padding: 5px;background-color: #f2f5f7;align-content: absolute;
+      width: 300px;
+      height: 30px;
+      padding-left: 5px;
+      font: bold 13px sans-serif;
+      color: #191970;
+      border-radius: 3px;
+      border: 1px solid #bfc4c6;
+      outline: none;  ") }}
+                 <p></p>
+                 <p></p>
+                <button class="btn btn-sm btn-primary btn-block" type="submit" style="margin-top: 30px;
+      background-color: #778899;
+      text-align: center;
+      border-radius: 3px;
+      font: bold 12px/20px sans-serif;
+      color: #F8F8FF;
+      text-shadow: 1px 0px 1px #696969;
+      cursor: pointer;
+      margin-bottom: 25px;
+      margin-left: 25px;
+      border: 1px; 
+      ">Enviar</button>
+
+
+            </div>
+         </form>
+{% endblock %}

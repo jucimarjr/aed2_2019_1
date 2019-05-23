@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <h2>Resultado</h2>
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+         <div class="alert alert-warning">
+           <ul class=flashes>
+             {% for message in messages %}
+             <li>{{ message }}</li>
+             {% endfor %}
+           </ul>
+         </div>
+         {% endif %}
+         {% endwith %}
+         <form method="POST" enctype="multipart/form-data">
+             <div class="">
+                 <form class="" action="result.html" method="post">
+                </form>
+                <button class="btn btn-sm btn-primary btn-block" href="index.html">Oi, eu sou um botão exageradamente grande!</button>
+            </div>
+         </form>
+{% endblock %}

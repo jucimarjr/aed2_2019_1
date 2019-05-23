@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+         <div class="alert alert-warning">
+           <ul class=flashes>
+             {% for message in messages %}
+             <li>{{ message }}</li>
+             {% endfor %}
+           </ul>
+         </div>
+         {% endif %}
+         {% endwith %}
+
+<div id="doninha-box">
+    <div id="nome-topo">Bem-vindo ao Doninha!</div>
+    <div id="content"> 
+      <form action="" method="get">
+        <div class="input-div" id="entrada">
+          <input type="text" placeholder="Insira a frase" name="entradadoninha" />
+        </div>
+        <div class="input-botao" id="submter">
+          <input type="submit" value="OK"/>
+        </div>
+    </div>
+      </form>
+    <div id="sidebar"></div>
+     </div>    
+     
+      
+  </div>
+{% endblock %}

@@ -1,0 +1,113 @@
+body
+    {
+      background-color: #778899;
+    }
+   #doninha-box
+   {
+      background-color: #FFFAFA;
+      width: 1300px;
+      margin: auto;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    /*.input-botao
+    {
+      margin-bottom: 25px;
+      margin-left: 25px;
+
+    }*/
+
+    input[type=submit]
+    {
+      margin-top: -30px;
+      background-color: #778899;
+      text-align: center;
+      border-radius: 3px;
+      font: bold 12px/20px sans-serif;
+      color: #F8F8FF;
+      text-shadow: 1px 0px 1px #696969;
+      cursor: pointer;
+      margin-bottom: 25px;
+      margin-left: 25px;
+      border: 1px;
+
+    }
+
+    input[type=submit]:hover
+    {
+      background-color: #87CEEB;
+    }
+
+    #nome-topo
+    {
+      height: 70px;
+      text-align: center;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      font: bold 20px/70px sans-serif;
+      color: #F8F8FF;
+      text-shadow: 1px 0px 1px #696969;
+      
+      background: #b5bdc8; 
+      background: -moz-linear-gradient(top,  #b5bdc8 0%, #828c95 36%, #28343b 100%);
+      background: -webkit-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%);
+      background: linear-gradient(to bottom,  #b5bdc8 0%,#828c95 36%,#28343b 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 );
+
+    }
+
+    /*#box-interno
+    {
+      background-color: #FFFAFA;
+      width: 1100px;
+      height: 550px;
+    }*/
+
+  
+    .input-div
+    {
+      
+      border-radius: 3px;
+      width: 310px;
+      margin: 20px;
+      padding: 5px;
+      background-color: #f2f5f7;
+    }
+
+    .input-div input
+    {
+      align-content: absolute;
+      width: 300px;
+      height: 30px;
+      padding-left: 5px;
+      font: bold 13px sans-serif;
+      color: #191970;
+      border-radius: 3px;
+      border: 1px solid #bfc4c6;
+      outline: none;  
+
+    }
+
+    .input-div:hover
+    {
+      background-color: #E0FFFF;
+    }
+
+    .input-div:hover
+    {
+      border-color: #7dc6dd;
+    }
+
+      #content
+    {
+      float: left;
+      width: 320px;
+    }
+
+    #sidebar
+    {
+      float: right;
+      width: 980px;
+    }
+
