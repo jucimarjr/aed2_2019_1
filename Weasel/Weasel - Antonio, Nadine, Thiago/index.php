@@ -133,8 +133,6 @@
       </div>
     </div>
 
-
-
   </footer>
 
   <div class="copyright py-4 text-center text-white">
@@ -149,7 +147,6 @@
       <i class="fa fa-chevron-up"></i>
     </a>
   </div>
-
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
