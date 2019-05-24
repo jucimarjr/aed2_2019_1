@@ -15,7 +15,7 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
+    <!--  Fontes customizadas -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -23,7 +23,7 @@
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
-  <!-- Custom styles for this template -->
+  <!-- Folha de estilos -->
   <link href="css/freelancer.min.css" rel="stylesheet">
 
 </head>
@@ -238,11 +238,11 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-  <!-- Contact Form JavaScript -->
+  <!-- Form contato js -->
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>
 
-  <!-- Custom scripts for this template -->
+  <!--Scripts customizadas  -->
   <script src="js/freelancer.min.js"></script>
   <script src="java.js"></script>
 
