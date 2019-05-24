@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Programa Doninha - Weaslel</title>
+  <title>Programa Doninha - Weasel</title>
 
 
 
