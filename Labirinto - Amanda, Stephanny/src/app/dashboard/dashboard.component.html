@@ -1,0 +1,47 @@
+
+<!doctype html>
+
+
+    <div class="container-fluid">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Kruskal demo</h4>
+                    <p class="category">Demonstration of the power of evolutionary algorithms with an appropriate fitness function</p>
+                </div>
+                <div class="content">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Rows</label>
+                                  <input type="number" id="rows" class="form-control border-input" value="20">
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Columns</label>
+                                  <input type="number" id="cols" class="form-control border-input" value="20">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="text-center">
+                        <button class="btn btn-info btn-fill btn-wd" type="button" onclick="make_maze()">Generate</button>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+                <div class="card">
+                    <div class="content table-responsive table-full-width text-center">
+                      <table align="center" class="table table-striped center" id='maze'>
+                      </table>
+                      <div class="text-center">
+                        <button class="btn btn-info btn-fill btn-wd" id="solve" style='display:none' type="button" onclick="solve(); void(0)">Solve</button>
+                      </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
