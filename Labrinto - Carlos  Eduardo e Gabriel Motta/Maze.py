@@ -101,7 +101,7 @@ class MazeGenerator:
             outer_wall.startend = True
 
 
-class Kruskal:
+class Prim:
 
 
     def __init__(self, maze):
@@ -294,7 +294,7 @@ class Labyrinth:
         self.gen = MazeGenerator(self.maze)
         self.generate_speed = generate_speed
         self.solve_speed = solve_speed
-        self.solver = Kruskal(self.maze)
+        self.solver = Prim(self.maze)
 
     def set_dimensions(self):
         maze_size = self.screen_size - 2*self.OFFSET
