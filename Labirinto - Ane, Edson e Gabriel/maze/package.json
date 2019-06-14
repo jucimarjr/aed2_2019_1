@@ -1,0 +1,14 @@
+{
+  "name": "labirinto-js",
+  "version": "1.0.0",
+  "description": "Labirinto gerado usando o algoritmo de Prim e algoritmo de Dijkstra para encontrar a árvore de caminho mais curto para todos os nós do labirinto",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ane Caroline, Edson, Gabriel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
