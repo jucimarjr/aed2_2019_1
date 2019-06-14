@@ -8,15 +8,15 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Kruskal demo</h4>
-                    <p class="category">Demonstration of the power of evolutionary algorithms with an appropriate fitness function</p>
+                    <h4 class="title">Maze</h4>
+                    <p class="category">Maze is a visualization for maze generation and path solving using JavaScript with Prim and Dijkstra's Algorithms.</p>
                 </div>
                 <div class="content">
                       <div class="row">
                           <div class="col-md-6">
                               <div class="form-group">
                                   <label>Rows</label>
-                                  <input type="number" id="rows" class="form-control border-input" value="20">
+                                  <input type="number" id="rows" class="form-control border-input" value="10">
                               </div>
                           </div>
                           <div class="col-md-6">
@@ -26,17 +26,22 @@
                               </div>
                           </div>
                       </div>
-                      <div class="text-center">
-                        <button class="btn btn-info btn-fill btn-wd" type="button" onclick="make_maze()">Generate</button>
-                      </div>
+                      <!-- <div class="text-center">
+                        <button class="btn btn-info btn-fill btn-wd" type="button" onclick="GenerateMaze()">Generate</button>
+                      </div> -->
                       <div class="clearfix"></div>
                 </div>
                 <div class="card">
                     <div class="content table-responsive table-full-width text-center">
-                      <table align="center" class="table table-striped center" id='maze'>
-                      </table>
+                      <!-- <table align="center" class="table table-striped center" id='maze'>
+                      </table> -->
+                      <canvas></canvas>
                       <div class="text-center">
-                        <button class="btn btn-info btn-fill btn-wd" id="solve" style='display:none' type="button" onclick="solve(); void(0)">Solve</button>
+                        <button class="btn btn-info btn-fill btn-wd">Solve
+                        <div class="search-btns" id="search-btns">
+                            <button class="Dijkstra" style="background-color:#68B3C8;"id="solve" ></button>
+                        </div>
+                        </button>
                       </div>
                     </div>
 
