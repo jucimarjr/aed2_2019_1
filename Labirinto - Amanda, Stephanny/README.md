@@ -1,6 +1,6 @@
 
 
-Amanda Leticia Mineiro Chaves
+Amanda Leticia Mineiro Chaves e 
 Stephanny Barreto
 
 ![Picture of generated maze](https://github.com/jucimarjr/aed2_2019_1/blob/master/Labirinto%20-%20Amanda%2C%20Stephanny/print1.jpeg)
