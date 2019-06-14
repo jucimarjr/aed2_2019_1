@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style3.css">
+	<title>Solucionador de Labirintos Aleatorios</title>
+</head>
+<body>
+	<div class="div1">
+	</div>
+
+	<div class="div2">
+		<div class="header">
+			<div 	 class="header-right">
+				<p>Solucionador de Labirintos Aleatorios</p>
+			</div>
+		</div>
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+			<title>Solucionador de Labirintos Aleatorios</title>
+			<meta name="description" content="">
+		
+			<link rel="stylesheet" href="main.css">
+			<link rel="stylesheet" href="lib/jasmine-1.2.0/jasmine.css">
+			
+			<meta name="viewport" content="width=device-width">
+		</head>
+		<body class='index'>
+			<p id="pleasewait">Gerando labirinto. Aguarde por favor :D ...</p>
+			<canvas id="maze" width="600" height="600"></canvas>
+			
+		
+			
+			
+			<input class="btn success" type="submit" value="Resolver Labirinto" id="solve"></input>
+			<form action="index.html" method="get">
+				<input class="btn warning" type="submit" value="Retornar">
+			</form>
+			
+			<script src="lib/jquery.min.js"></script>
+			<script src="lib/underscore-min.js"></script>
+			<script src="src/array.js"></script>
+			<script src="src/cell.js"></script>
+			<script src="src/mazeGenerator.js"></script>
+			<script src="src/graph.js"></script>
+			<script>
+				
+				var url_string = window.location.href; 
+      
+      			var url = new URL(url_string);
+      			var nome = url.searchParams.get("nome");
+
+				var Maze = function(doc, elemId) {
+				this.canvas = doc.getElementById(elemId);
+				this.width = this.canvas.width;
+				this.height = this.canvas.height;
+				this.ctx = this.canvas.getContext('2d');
+				this.horizCells = nome;
+				this.vertCells = nome;
+				this.generator = new MazeGenerator(this.horizCells, this.vertCells);
+				this.cellWidth = this.width / this.horizCells;
+				this.cellHeight = this.height / this.vertCells;
+				
+				var self = this;
+
+				self.ctx.strokeStyle = "rgb(0, 0, 0)";
+				self.ctx.fillStyle = "rgba(0, 86, 53, 0.5)";
+
+				return {
+					width: function() {
+					return self.width;
+					},
+
+					height: function() {
+					return self.height;
+					},
+
+					generate: function () {
+					self.generator.generate();
+					},
+
+					draw: function() {
+					this.drawBorders();
+					this.drawMaze();
+					},
+
+					solve: function() {
+					self.generator.solve();
+					this.drawSolution();
+					},
+
+					drawBorders: function() {
+					this.drawLine(self.cellWidth, 0, self.width, 0);
+					this.drawLine(self.width, 0, self.width, self.height);
+					this.drawLine(self.width - self.cellWidth, self.height, 0, self.height);
+					this.drawLine(0, self.height, 0, 0);
+					},
+
+					drawSolution: function() {
+					var path = self.generator.path;
+					
+					for(var i = 0; i < path.length; i++) {
+						(function () {
+						var cell = path[i];
+						var x = cell.x * self.cellWidth;
+						var y = cell.y * self.cellHeight;
+						setTimeout(function() {
+							self.ctx.fillRect(x, y, self.cellWidth, self.cellHeight);
+						}, 80 * i);
+						})();
+					}
+					},
+
+					drawMaze: function() {
+					var graph = self.generator.graph;
+					var drawnEdges = [];
+
+					var edgeAlreadyDrawn = function(cell1, cell2) {
+						return _.detect(drawnEdges, function(edge) {
+						return _.include(edge, cell1) && _.include(edge, cell2);
+						}) != undefined;
+					};
+
+					for(var i = 0; i < graph.width; i++) {
+						for(var j = 0; j < graph.height; j++) {
+						var cell = graph.cells[i][j];
+						var topCell = graph.getCellAt(cell.x, cell.y - 1);
+						var leftCell = graph.getCellAt(cell.x - 1, cell.y);
+						var rightCell = graph.getCellAt(cell.x + 1, cell.y);
+						var bottomCell = graph.getCellAt(cell.x, cell.y + 1);
+						
+						if(!edgeAlreadyDrawn(cell, topCell) && graph.areConnected(cell, topCell)) {
+							var x1 = cell.x * self.cellWidth;
+							var y1 = cell.y * self.cellHeight;
+							var x2 = x1 + self.cellWidth;
+							var y2 = y1;
+							
+							this.drawLine(x1, y1, x2, y2);
+							drawnEdges.push([cell, topCell]);
+						}
+
+						if(!edgeAlreadyDrawn(cell, leftCell) && graph.areConnected(cell, leftCell)) {
+							var x2 = x1;
+							var y2 = y1 + self.cellHeight;
+							
+							this.drawLine(x1, y1, x2, y2);
+							drawnEdges.push([cell, leftCell]);
+						}
+
+						if(!edgeAlreadyDrawn(cell, rightCell) && graph.areConnected(cell, rightCell)) {
+							var x1 = (cell.x * self.cellWidth) + self.cellWidth;
+							var y1 = cell.y * self.cellHeight;
+							var x2 = x1;
+							var y2 = y1 + self.cellHeight;
+							
+							this.drawLine(x1, y1, x2, y2);
+							drawnEdges.push([cell, rightCell]);
+						}
+
+						if(!edgeAlreadyDrawn(cell, bottomCell) && graph.areConnected(cell, bottomCell)) {
+							var x1 = cell.x * self.cellWidth;
+							var y1 = (cell.y * self.cellHeight) + self.cellHeight;
+							var x2 = x1 + self.cellWidth;
+							var y2 = y1;
+							
+							this.drawLine(x1, y1, x2, y2);
+							drawnEdges.push([cell, bottomCell]);
+						}          
+						}
+					}
+					},
+
+					drawLine: function(x1, y1, x2, y2) {
+					self.ctx.beginPath();
+					self.ctx.moveTo(x1, y1);
+					self.ctx.lineTo(x2, y2);
+					self.ctx.stroke();
+					}
+				};
+				};
+			</script>
+			<script>
+				var maze = new Maze(document, 'maze');
+				var waitElem = $("#pleasewait");
+				
+				setTimeout(function() {
+					maze.generate();
+					maze.draw();
+					waitElem.remove();
+					$("#solve").show();
+				}, 10);
+		
+				$(function() {
+					$('#solve').click(function() {
+						maze.solve();
+					});
+				});
+			</script>
+	</div>
+</body>
+</html>

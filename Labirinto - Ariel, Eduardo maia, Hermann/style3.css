@@ -1,0 +1,231 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.btn {
+		background-color: inherit;
+		padding: 14px 28px;
+		font-size: 16px;
+		cursor: pointer;
+		display: inline-block;
+		border: 1px solid black;
+		border-radius: 5px;
+		background-color: white;
+	}
+
+	/* Green */
+.success {
+	color: green;
+}
+
+.success:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+
+/* Blue */
+.info {
+	color: dodgerblue;
+}
+
+.info:hover {
+	background: #2196F3;
+	color: white;
+}
+
+	/* Orange */
+.warning {
+	color: orange;
+}
+
+.warning:hover {
+	background: #ff9800;
+	color: white;
+}
+
+	/* Red */
+.danger {
+	color: red;
+}
+
+.danger:hover {
+	background: #f44336;
+	color: white;
+}
+
+/* Gray */
+.default {
+	color: black;
+}
+
+.default:hover {
+	background: #e7e7e7;
+}
+
+.div1{
+	background-color: #005636;
+	padding: 2cm;
+	border-radius: 0px;
+	background-size: cover;
+	border-bottom: 3px solid black;
+	z-index: 1;
+}
+
+
+.div2{
+	position: fixed;
+	width: 900px;
+	height: 950px;
+	background-color: white;
+	border-radius: 5px;
+	z-index: 2;
+	box-shadow: 5px 5px black;
+	margin-top: -2.5cm;
+	margin-left: 30%;
+	margin-right: 60%;
+	background-size: cover;
+	border: 2px solid #000000;
+}
+
+.div2 h3{
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 5px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.div2 h2{
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 5px;
+	text-align: center;
+}
+
+
+.div2 p{
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 5px;
+}
+
+.div2 ul{
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 30px;
+}
+
+.infos p{
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+.div2 a{
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 40px;
+	margin-bottom: 1cm;
+}
+
+
+.div3{
+	position: absolute;
+	background-color: #ffffff;
+	z-index: 9;
+	background-size: cover;
+	padding: 10px;
+	height: auto;
+}
+
+.botoes {
+	text-align: center;
+	width: 100%;
+}
+
+
+
+
+.header {
+  overflow: hidden;
+  background-color: #444444;
+  padding: 20px 10px;
+}
+
+.header p {
+  float: center;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px;
+  line-height: 25px;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.imagem-1{
+	width: 100%;
+}
+img#img_pacificbell {
+    height: 225px;
+    width: 400px;
+
+}
+
+img#hue {
+    height: 225px;
+    width: 300px;
+}
+
+.imagem-1 button{
+	margin-left: 50px;
+}
+
+.imagem-2{
+	width: 100%;
+}
+
+.imagem-2 button{
+	margin-left: 50px;
+}
+
+.carrega{
+	margin-top: 1cm;
+	margin-left: 8.5cm;
+}
+
+div#charts {
+    display: inline-flex;
+}
+div#chart_poisson {
+    display: -webkit-inline-box;
+}
+div#chart_cell1{
+	display: inline-table;
+}
+div#chart_cell2{
+	display: -webkit-inline-box;
+}
+div#chart_prob_erro{
+	display: -webkit-inline-box;
+}
+div#chart_3{
+
+}
+div#tb_chamadas {
+
+}
+
+li {
+    margin-left: 8%;
+}
