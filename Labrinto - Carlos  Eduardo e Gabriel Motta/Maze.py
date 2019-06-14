@@ -422,6 +422,6 @@ class Labyrinth:
 
 
 if __name__ == "__main__":
-    size = int(input("Digite a quantidade de Linhas Colunas que voc quer: "))
+    size = int(input("Digite a quantidade de Linhas Colunas que voce quer: "))
     Labyrinth = Labyrinth(screen_size=900, size = size)
     Labyrinth.run()
