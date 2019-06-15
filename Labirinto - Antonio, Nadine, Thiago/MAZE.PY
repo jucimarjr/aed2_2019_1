@@ -4,7 +4,7 @@ from random import randint
 import matplotlib.pyplot as plt
 from math import inf
 from queue import PriorityQueue
-#ALUNOS : ANTONIO RODRIGUES DE SOUZA NETO , THIAGO SANTOS BORGES , NADINE BRITO
+#ALUNOS : ANTONIO RODRIGUES DE SOUZA NETO - 1615310028, THIAGO SANTOS BORGES - 1615310023 , NADINE BRITO - 1615310040
 #classe onde definimos a célula do labirinto, sua estrutura e propriedades
 class Cell:
     def __init__(self, x, y):
